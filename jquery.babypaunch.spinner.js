@@ -1,7 +1,7 @@
 /*
 * 개발: 정대규
 * 최초: 2016.11.15
-* 수정: 2016.11.17
+* 수정: 2016.11.21
 */
 $.fn.spinner = function(data){
 	/*
@@ -20,7 +20,7 @@ $.fn.spinner = function(data){
 	var $spinner = {
 		color: "white"
 		, background: "rgba(0,0,0,0.5)"
-		, html: "&#x21BB;"
+		, html: "hourglass"
 	};
 
 	this.init = function($spinner){
@@ -56,10 +56,12 @@ $.fn.spinner = function(data){
 			$("head").append($style);
 		}
 
+		var icon = $spinner.html === "hourglass" ? "&#x29D6;" : ($spinner.html === "spinner" ? "&#x21BB" : $spinner.html);
+
 		$spin = $(this);
 		$spin
 			.attr({"data-spinner-layer": "", "data-spinner-body": $("body").css("overflow")})
-			.append("<div data-spinner-bar>" + $spinner.html + "</div>")
+			.append("<div data-spinner-bar>" + icon + "</div>")
 			.on("show", function(){
 				$("body").css("overflow", "hidden");
 			})
