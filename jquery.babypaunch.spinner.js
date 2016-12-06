@@ -61,7 +61,7 @@ $.fn.spinner = function(data){
 		$spin = $(this);
 		$spin
 			.attr({"data-spinner-layer": "", "data-spinner-body": $("body").css("overflow")})
-			.append("<div data-spinner-bar>" + icon + "</div>")
+			.html("<div data-spinner-bar>" + icon + "</div>")
 			.on("show", function(){
 				$("body").css("overflow", "hidden");
 			})
