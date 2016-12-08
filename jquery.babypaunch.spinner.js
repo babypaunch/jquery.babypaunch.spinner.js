@@ -21,6 +21,7 @@ $.fn.spinner = function(data){
 		color: "white"
 		, background: "rgba(0,0,0,0.5)"
 		, html: "hourglass"
+		, absolute: true
 	};
 
 	this.init = function($spinner){
@@ -66,7 +67,7 @@ $.fn.spinner = function(data){
 				$("body").css("overflow", "hidden");
 			})
 			.on("hide", function(){
-				$("body").css("overflow", $spin.attr("data-spinner-body")).removeClass("unselectable");
+				$("body").css("overflow", $spinner.absolute ? "" : $spin.attr("data-spinner-body")).removeClass("unselectable");
 			})
 		;
 
