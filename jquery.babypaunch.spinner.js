@@ -1,7 +1,7 @@
 /*
 * 개발: 정대규
 * 최초: 2016.11.15
-* 수정: 2016.11.21
+* 수정: 2017.01.04
 */
 $.fn.spinner = function(data){
 	/*
@@ -22,6 +22,7 @@ $.fn.spinner = function(data){
 		, background: "rgba(0,0,0,0.5)"
 		, html: "hourglass"
 		, absolute: true
+		, spin: true
 	};
 
 	this.init = function($spinner){
@@ -41,7 +42,7 @@ $.fn.spinner = function(data){
 			+ "[data-spinner-bar] {\n"
 				+ "\tcolor: " + $spinner.color + ";"
 				+ "\tposition: absolute; top: calc(50% - 30px); left: calc(50% - 15px); font-weight: bold; font-size: 40px;"
-				+ "\t-webkit-animation: data-spinner 2s linear infinite; -moz-animation: data-spinner 2s linear infinite; animation: data-spinner 2s linear infinite;\n"
+				+ ($spinner.spin ? "\t-webkit-animation: data-spinner 2s linear infinite; -moz-animation: data-spinner 2s linear infinite; animation: data-spinner 2s linear infinite;\n" : "")
 			+ "}\n"
 			+ "\t@-moz-keyframes data-spinner {100% {-moz-transform: rotate(360deg); transform: rotate(360deg);}}\n"
 			+ "\t@-webkit-keyframes data-spinner {100% {-webkit-transform: rotate(360deg); transform: rotate(360deg);}}\n"
