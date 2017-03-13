@@ -20,7 +20,7 @@ $.fn.spinner = function(data){
 	var $spinner = {
 		color: "white"
 		, background: "rgba(0,0,0,0.5)"
-		, html: "hourglass"
+		, html: "spinner" //"hourglass", "&#128259"
 		, absolute: true
 		, spin: true
 	};
