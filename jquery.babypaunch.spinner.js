@@ -38,6 +38,7 @@ $.fn.spinner = function(data){
 				+ "\tdisplay: none; position: fixed; top: 0; left: 0;"
 				+ "\tbackground: " + $spinner.background + ";"
 				+ "\twidth: 100%; height: 100%; padding: 0; margin: 0;\n"
+				+ "\tz-index: 99999999;\n"
 			+ "}\n"
 			+ "[data-spinner-bar] {\n"
 				+ "\tcolor: " + $spinner.color + ";"
